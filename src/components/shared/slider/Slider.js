@@ -11,6 +11,7 @@ import {
   AiOutlineLogout,
   AiOutlineHome,
   AiOutlineShoppingCart,
+  AiOutlineMail,
 } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { GLOBAL_CONTEXT } from "../../../layouts/AppLayout";
@@ -29,6 +30,11 @@ const Slider = ({ open, setOpen, role, status }) => {
             name: "Analytics",
             link: "dashboard/analytics",
             icon: TbDeviceAnalytics,
+          },
+          {
+            name: "Emails",
+            link: "dashboard/emails",
+            icon: AiOutlineMail,
           },
           {
             name: "products",

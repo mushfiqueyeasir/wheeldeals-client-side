@@ -33,7 +33,7 @@ const Login = ({ swapJoinPage }) => {
                   <h1 className="mb-5 text-4xl font-bold">New Here?</h1>
                   <p className="mb-5">
                     Create a account with your personal information to explore
-                    the latest events and grow with others!
+                    the latest Bikes!
                   </p>
                   <button
                     className="btn bg-[#EBA83A] hover:bg-[#da972c] border-0"
@@ -54,10 +54,11 @@ const Login = ({ swapJoinPage }) => {
                     <span className="label-text">Phone Number</span>
                   </label>
                   <input
-                    type="number"
-                    placeholder="Phone Number"
+                    type="text"
+                    placeholder="Example:+8801711111111"
                     className="input input-bordered"
                     name="phoneNumber"
+                    pattern="^\+8801[3-9][0-9]{8}$"
                     required
                   />
                 </div>
@@ -67,7 +68,7 @@ const Login = ({ swapJoinPage }) => {
                   </label>
                   <input
                     type="text"
-                    placeholder="password"
+                    placeholder="Include Uppercase, Lowercase, Number, Special"
                     className="input input-bordered"
                     name="password"
                     required

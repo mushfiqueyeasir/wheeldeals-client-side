@@ -22,6 +22,9 @@ const AppLayout = ({ children }) => {
   const [orders, orderLoading, ordersRefetch] = useFetch({
     api: "order",
   });
+  const [emails, emailsLoading, emailRefetch] = useFetch({
+    api: "email",
+  });
 
   const [user, userLoading, userRefetch] = useSession();
 
@@ -40,7 +43,8 @@ const AppLayout = ({ children }) => {
     customersLoading ||
     cartLoading ||
     orderLoading ||
-    userOrderLoading
+    userOrderLoading ||
+    emailsLoading
   ) {
     return <Loading />;
   }
@@ -58,6 +62,8 @@ const AppLayout = ({ children }) => {
     ordersRefetch,
     userOrder,
     userOrderRefetch,
+    emails,
+    emailRefetch,
   };
 
   return (

@@ -10,4 +10,4 @@ export const inputContainerCX = (spanFull, widthHalf) => {
 
 export const legendCx = "px-2 font-semibold ";
 
-export const inputCX = "customInput";
+export const inputCX = "customInput font-[400]";

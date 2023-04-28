@@ -45,6 +45,7 @@
       <li>Checkout all from cart</li>
       <li>Order history page</li>
       <li>User profile management</li>
+      <li>Email Management</li>
     </ul>
     <h2 id="contributing">Contributing</h2>
     <p>Contributions are welcome! Please feel free suggest me more ideas to improve this app.</p>

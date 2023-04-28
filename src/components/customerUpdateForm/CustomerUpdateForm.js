@@ -133,18 +133,21 @@ const CustomerUpdateForm = ({ customer }) => {
               defaultValue={name}
             />
             <CustomInputField
-              type="number"
+              type="text"
               label={"Customer Phone Number"}
               name="phoneNumber"
               required={true}
               spanFull={true}
               defaultValue={phoneNumber}
+              pattern="^\+8801[3-9][0-9]{8}$"
+              placeholder="Example:+8801711111111"
             />
             <CustomInputField
               type="text"
               label={"Customer Password"}
               name="password"
               spanFull={true}
+              placeholder="Include Uppercase, Lowercase, Number, Special"
             />
           </div>
           <div className="pt-6  flex justify-center">

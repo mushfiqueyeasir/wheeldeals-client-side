@@ -11,7 +11,7 @@ const User = () => {
   return (
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
+        <div className="w-10 rounded-full border-2 border-green-400">
           <img src={user.imgURL} alt={user.name} />
         </div>
       </label>

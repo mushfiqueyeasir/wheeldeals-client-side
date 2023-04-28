@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import { HiOutlineTrash } from "react-icons/hi";
-import { BsPen } from "react-icons/bs";
 import Swal from "sweetalert2";
 import { deleteItem } from "../../hooks/delete";
 import { GLOBAL_CONTEXT } from "../../layouts/AppLayout";
 import { Link } from "react-router-dom";
+import { AiFillEye } from "react-icons/ai";
 
-const CustomerTableRow = ({ customer }) => {
-  const { customerRefetch } = useContext(GLOBAL_CONTEXT);
-  const { id, name, imgURL, phoneNumber, role } = customer;
+const EmailTableRow = ({ item }) => {
+  const { emailRefetch } = useContext(GLOBAL_CONTEXT);
+  const { _id, name, subject, opened } = item;
+
   const handleDelete = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -20,31 +21,31 @@ const CustomerTableRow = ({ customer }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        deleteItem({ api: "user", id: id, refetch: customerRefetch });
+        deleteItem({ api: "email", id: _id, refetch: emailRefetch });
       }
     });
   };
 
   return (
-    <tr>
-      <td>
+    <tr className="font-[500] text-base">
+      <td
+        className={`hidden lg:table-cell ${
+          opened === "false" && "bg-yellow-100"
+        }`}
+      >
         <div className="flex items-center space-x-3">
-          <div className="avatar">
-            <div className="mask mask-squircle w-12 h-12">
-              <img src={imgURL} alt="Avatar Tailwind CSS Component" />
-            </div>
-          </div>
-          <div>
-            <div className="font-bold capitalize">{name}</div>
-            <div className="text-sm opacity-50  capitalize">{role}</div>
-          </div>
+          <div className="capitalize text-base font-[500]">{name}</div>
         </div>
       </td>
-      <td className="hidden lg:table-cell">
-        {phoneNumber}
+      <td className={` ${opened === "false" && "bg-yellow-100"} capitalize`}>
+        {subject.length > 15 ? subject.slice(0, 15) + "..." : subject}
         <br />
       </td>
-      <td className="text-white">
+      <td
+        className={`text-xl text-white ${
+          opened === "false" && "bg-yellow-100"
+        }`}
+      >
         <div className="flex items-center gap-x-2">
           <button
             type="button"
@@ -54,11 +55,11 @@ const CustomerTableRow = ({ customer }) => {
             <HiOutlineTrash />
           </button>
           <Link
-            to={`/dashboard/customers/${id}`}
-            type="button"
+            to={`/dashboard/emails/${_id}`}
+            htmlFor="my-modal"
             className="bg-blue-500 p-2 rounded-full"
           >
-            <BsPen />
+            <AiFillEye />
           </Link>
         </div>
       </td>
@@ -66,4 +67,4 @@ const CustomerTableRow = ({ customer }) => {
   );
 };
 
-export default CustomerTableRow;
+export default EmailTableRow;

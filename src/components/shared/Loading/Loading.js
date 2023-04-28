@@ -6,7 +6,7 @@ const Loading = ({ small }) => {
       className={
         small
           ? ` flex justify-center items-center`
-          : `fixed top-[45vh]  md:top-[43vh] lg:top-[40vh]  left-[35vw] md:left-[] lg:left-[45%]`
+          : `flex justify-center items-center h-[90vh] lg:h-[100vh]`
       }
     >
       <div

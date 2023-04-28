@@ -22,6 +22,8 @@ import ProductDetailPageLayout from "./page/productDetailPage/ProductDetailPageL
 import UserRouteAuth from "./auth/userRouteAuth";
 import AdminRouteAuth from "./auth/adminRouteAUth";
 import ErrorPage from "./page/errorPage/ErrorPage";
+import EmailPage from "./page/emailPage/EmailPage";
+import EmailViewPage from "./page/emailViewPage.js/EmailViewPage";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path="/join" element={<JoinPage />} />
 
         <Route path="/dashboard/analytics" element={<Analytics />} />
+        <Route path="/dashboard/emails" element={<EmailPage />} />
+        <Route path="/dashboard/emails/:id" element={<EmailViewPage />} />
         <Route path="/dashboard/product" element={<ProductManagePage />} />
         <Route path="/dashboard/product/:id" element={<ProductEditPage />} />
         <Route path="/dashboard/addProduct" element={<AddProductPage />} />

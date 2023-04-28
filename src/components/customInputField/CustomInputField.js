@@ -11,6 +11,8 @@ const CustomInputField = ({
   textArea,
   defaultValue,
   onChange,
+  pattern,
+  placeholder,
   min,
   max,
 }) => {
@@ -48,6 +50,8 @@ const CustomInputField = ({
           onChange={onChange && onChange}
           min={min && min}
           max={max && max}
+          pattern={pattern}
+          placeholder={placeholder}
         />
       )}
     </fieldset>

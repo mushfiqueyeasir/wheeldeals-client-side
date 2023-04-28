@@ -125,11 +125,13 @@ const CustomerCreateForm = () => {
               spanFull={true}
             />
             <CustomInputField
-              type="number"
+              type="text"
               label={"Customer Phone Number"}
               name="phoneNumber"
               required={true}
               spanFull={true}
+              pattern="^\+8801[3-9][0-9]{8}$"
+              placeholder="Example:+8801711111111"
             />
             <CustomInputField
               type="text"
@@ -137,6 +139,7 @@ const CustomerCreateForm = () => {
               name="password"
               required={true}
               spanFull={true}
+              placeholder="Include Uppercase, Lowercase, Number, Special"
             />
           </div>
           <div className="pt-6  flex justify-center">
